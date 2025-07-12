@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pan a la Mesa - Panadería Artesanal en Barrancabermeja | Entrega Programada</title>
+    <meta name="description" content="Pan fresco artesanal en Barrancabermeja con entrega programada. Esponjados, tortas de queso costeño y más productos horneados diariamente.">
+    <meta name="keywords" content="panadería, Barrancabermeja, pan fresco, esponjados, torta queso costeño, entrega domicilio">
+    <meta name="author" content="Pan a la Mesa">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Pan a la Mesa - Panadería Artesanal">
+    <meta property="og:description" content="Pan fresco artesanal con entrega programada en Barrancabermeja">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://panalamesa.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Variables CSS */
+        :root {
+            --primary-color: #d4a762;
+            --secondary-color: #b38b4a;
+            --background-color: #f9f5e9;
+            --text-color: #333;
+            --white: #fff;
+            --shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Estilos generales */
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            text-align: center;
+            color: var(--white);
+            font-style: italic;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d4a762" width="1200" height="600"/><circle fill="%23b38b4a" cx="200" cy="150" r="80"/><circle fill="%23b38b4a" cx="800" cy="400" r="100"/><circle fill="%23b38b4a" cx="1000" cy="200" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Productos destacados */
+        .featured {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-img::after {
+            content: '🥖';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.7;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .product-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Información importante */
+        .info-banner {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .info-banner h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Cómo funciona */
+        .how-it-works {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin: 40px 0;
+            border-radius: 10px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--background-color);
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Puntos de venta */
+        .points-of-sale {
+            padding: 60px 0;
+        }
+
+        .sale-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .sale-point {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .sale-point h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .sale-point p {
+            margin-bottom: 5px;
+        }
+
+        .sale-point .schedule {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Contacto */
+        .contact {
+            padding: 60px 0;
+            background-color: var(--white);
+            border-radius: 10px;
+        }
+
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--background-color);
+            border-radius: 10px;
+        }
+
+        .contact-method i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            margin: 30px 0;
+        }
+
+        .social-links a {
+            color: var(--white);
+            margin: 0 15px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        /* Loading estado */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🥖 Pan a la Mesa</div>
+            <p class="tagline">Pan fresco artesanal con entrega programada en Barrancabermeja</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#como-funciona">Cómo funciona</a></li>
+                <li><a href="#puntos-venta">Puntos de venta</a></li>
+                <li><a href="#contacto">Hacer pedido</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pan fresco cuando lo necesites</h1>
+            <p>Productos artesanales hechos con ingredientes de calidad premium</p>
+            <a href="#productos" class="btn">Ver productos</a>
+            <a href="#contacto" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <div class="info-banner">
+        <div class="container">
+            <h3>📞 Pedidos: WhatsApp 300-123-4567 | 🕐 Horario: Lunes a Sábado 6:00 AM - 6:00 PM</h3>
+            <p>Pedidos con mínimo 2 horas de anticipación • Entrega programada en puntos fijos</p>
+        </div>
+    </div>
+
+    <section id="productos" class="featured">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Esponjados</h3>
+                        <p class="product-price">$2,500 c/u</p>
+                        <p class="product-desc">Nuestro producto estrella, esponjosos y deliciosos. Perfectos para desayuno o merienda.</p>
+                        <button class="btn" onclick="addToOrder('Esponjados', 2500)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Torta de Queso Costeño</h3>
+                        <p class="product-price">$3,500 porción</p>
+                        <p class="product-desc">Deliciosa torta de queso costeño, precocida para mayor frescura. Sabor tradicional único.</p>
+                        <button class="btn" onclick="addToOrder('Torta de Queso Costeño', 3500)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tostadas de Ajo</h3>
+                        <p class="product-price">$2,500 paquete</p>
+                        <p class="product-desc">Crujientes tostadas con sabor a ajo. Duración hasta 2 semanas, perfectas para acompañar.</p>
+                        <button class="btn" onclick="addToOrder('Tostadas de Ajo', 2500)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pan de Sal</h3>
+                        <p class="product-price">$1,800 c/u</p>
+                        <p class="product-desc">Pan fresco tradicional, ideal para cualquier momento del día. Receta familiar de generaciones.</p>
+                        <button class="btn" onclick="addToOrder('Pan de Sal', 1800)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mantecadas</h3>
+                        <p class="product-price">$2,000 c/u</p>
+                        <p class="product-desc">Suaves y mantecosas, horneadas el mismo día. Perfectas para compartir en familia.</p>
+                        <button class="btn" onclick="addToOrder('Mantecadas', 2000)">Agregar al pedido</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <h3 class="product-title">Torta de Vino</h3>
+                        <p class="product-price">$3,000 porción</p>
+                        <p class="product-desc">Torta especial con un toque de vino tinto. Sabor sofisticado para ocasiones especiales.</p>
+                        <button class="btn" onclick="addToOrder('Torta de Vino', 3000)">Agregar al pedido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">¿Cómo funciona Pan a la Mesa?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Haz tu pedido</h3>
+                    <p>Selecciona los productos que deseas y la cantidad. Puedes pedir por WhatsApp o nuestro formulario con mínimo 2 horas de anticipación.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Preparamos tu pedido</h3>
+                    <p>Horneamos tus productos frescos el mismo día de entrega para garantizar máxima calidad y sabor.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Recoge en punto de venta</h3>
+                    <p>Te entregamos en el punto de venta más cercano a ti en el horario acordado. ¡Pan fresco garantizado!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="puntos-venta" class="points-of-sale">
+        <div class="container">
+            <h2 class="section-title">Puntos de Entrega</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Actualmente entregamos en estos puntos estratégicos de Barrancabermeja:</p>
+            
+            <div class="sale-points">
+                <div class="sale-point">
+                    <h3>🏪 Tienda La Esquina</h3>
+                    <p><strong>Ubicación:</strong> Barrio El Campín</p>
+                    <p><strong>Dirección:</strong> Calle 45 #23-15</p>
+                    <p class="schedule">Lunes a Viernes: 4:00 - 6:00 PM</p>
+                </div>
+                <div class="sale-point">
+                    <h3>🥖 Panadería Dulce Hogar</h3>
+                    <p><strong>Ubicación:</strong> Barrio Galán</p>
+                    <p><strong>Dirección:</strong> Carrera 12 #67-23</p>
+                    <p class="schedule">Martes y Jueves: 5:00 - 7:00 PM</p>
+                </div>
+                <div class="sale-point">
+                    <h3>🛒 MiniMarket Don José</h3>
+                    <p><strong>Ubicación:</strong> Barrio Las Flores</p>
+                    <p><strong>Dirección:</strong> Calle 78 #34-12</p>
+                    <p class="schedule">Miércoles y Viernes: 3:00 - 5:00 PM</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; background-color: var(--white); padding: 30px; border-radius: 10px; box-shadow: var(--shadow);">
+                <h3>¿Tienes una tienda y quieres ser punto de venta?</h3>
+                <p>Únete a nuestra red de puntos de entrega y genera ingresos adicionales</p>
+                <a href="#contacto" class="btn">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Haz tu pedido</h2>
+            
+            <div class="contact-options">
+                <div class="contact-method">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>La forma más rápida de hacer tu pedido</p>
+                    <a href="https://wa.me/573001234567" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Escribir ahora
+                    </a>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>Llámanos directamente</p>
+                    <a href="tel:+573001234567" class="btn">300-123-4567</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 style="text-align: center; margin-bottom: 30px;">O llena este formulario:</h3>
+                <form id="pedido-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico (opcional):</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-point">Punto de entrega preferido:</label>
+                        <select id="delivery-point" name="delivery-point" required>
+                            <option value="">Selecciona un punto</option>
+                            <option value="tienda-esquina">Tienda La Esquina (Barrio El Campín)</option>
+                            <option value="panaderia-dulce">Panadería Dulce Hogar (Barrio Galán)</option>
+                            <option value="minimarket-jose">MiniMarket Don José (Barrio Las Flores)</option>
+                            <option value="otro">Otro punto (especificar en mensaje)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="delivery-date">Fecha de entrega:</label>
+                        <input type="date" id="delivery-date" name="delivery-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="products-summary">Resumen del pedido:</label>
+                        <textarea id="products-summary" name="products-summary" readonly placeholder="Agrega productos desde la sección de productos"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje adicional (opcional):</label>
+                        <textarea id="message" name="message" placeholder="Instrucciones especiales, hora preferida, etc."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">
+                        <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pan a la Mesa</h4>
+                    <p>Panadería artesanal en Barrancabermeja</p>
+                    <p>Comprometidos con la calidad y frescura desde 2023</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> 300-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@panalamesa.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Barrancabermeja, Santander</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lunes a Sábado: 6:00 AM - 6:00 PM</p>
+                    <p>Domingo: Cerrado</p>
+                    <p>Pedidos con mínimo 2 horas de anticipación</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <p>&copy; 2024 Pan a la Mesa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573001234567" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Sistema de pedidos
+        let currentOrder = [];
+        let orderTotal = 0;
+
+        // Función para agregar productos al pedido
+        function addToOrder(productName, price) {
+            const existingProduct = currentOrder.find(item => item.name === productName);
+            
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                currentOrder.push({
+                    name: productName,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            updateOrderSummary();
+            showOrderConfirmation(productName);
+        }
+
+        // Actualizar resumen del pedido
+        function updateOrderSummary() {
+            const summaryTextarea = document.getElementById('products-summary');
+            orderTotal = 0;
+            
+            if (currentOrder.length === 0) {
+                summaryTextarea.value = 'Tu pedido está vacío. Agrega productos desde la sección de productos.';
+                return;
+            }
+            
+            let summary = 'RESUMEN DEL PEDIDO:\n\n';
+            
+            currentOrder.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                orderTotal += subtotal;
+                summary += `${item.name} x${item.quantity} - ${subtotal.toLocaleString()}\n`;
+            });
+            
+            summary += `\nTOTAL: ${orderTotal.toLocaleString()}`;
+            summaryTextarea.value = summary;
+        }
+
+        // Mostrar confirmación de producto agregado
+        function showOrderConfirmation(productName) {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background-color: #25D366;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 5px;
+                z-index: 1000;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                ${productName} agregado al pedido
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remover después de 3 segundos
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Manejar envío del formulario
+        document.getElementById('pedido-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const email = formData.get('email');
+            const deliveryPoint = formData.get('delivery-point');
+            const deliveryDate = formData.get('delivery-date');
+            const message = formData.get('message');
+            
+            // Validar que haya productos en el pedido
+            if (currentOrder.length === 0) {
+                alert('Por favor agrega al menos un producto a tu pedido.');
+                return;
+            }
+            
+            // Validar fecha de entrega
+            const selectedDate = new Date(deliveryDate);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                alert('La fecha de entrega debe ser hoy o en el futuro.');
+                return;
+            }
+            
+            // Generar mensaje para WhatsApp
+            let whatsappMessage = `🥖 *NUEVO PEDIDO - PAN A LA MESA*\n\n`;
+            whatsappMessage += `👤 *Cliente:* ${name}\n`;
+            whatsappMessage += `📞 *Teléfono:* ${phone}\n`;
+            if (email) whatsappMessage += `📧 *Email:* ${email}\n`;
+            whatsappMessage += `📍 *Punto de entrega:* ${getDeliveryPointName(deliveryPoint)}\n`;
+            whatsappMessage += `📅 *Fecha de entrega:* ${deliveryDate}\n\n`;
+            
+            whatsappMessage += `🛒 *PRODUCTOS:*\n`;
+            currentOrder.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                whatsappMessage += `• ${item.name} x${item.quantity} - ${subtotal.toLocaleString()}\n`;
+            });
+            
+            whatsappMessage += `\n💰 *TOTAL: ${orderTotal.toLocaleString()}*\n\n`;
+            
+            if (message) {
+                whatsappMessage += `📝 *Mensaje adicional:* ${message}\n\n`;
+            }
+            
+            whatsappMessage += `¡Gracias por tu pedido! Te confirmaremos la disponibilidad pronto.`;
+            
+            // Enviar por WhatsApp
+            const whatsappURL = `https://wa.me/573001234567?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Limpiar formulario y pedido
+            this.reset();
+            currentOrder = [];
+            orderTotal = 0;
+            updateOrderSummary();
+        });
+
+        // Función auxiliar para obtener nombre del punto de entrega
+        function getDeliveryPointName(value) {
+            const points = {
+                'tienda-esquina': 'Tienda La Esquina (Barrio El Campín)',
+                'panaderia-dulce': 'Panadería Dulce Hogar (Barrio Galán)',
+                'minimarket-jose': 'MiniMarket Don José (Barrio Las Flores)',
+                'otro': 'Otro punto (ver mensaje)'
+            };
+            return points[value] || value;
+        }
+
+        // Configurar fecha mínima en el campo de fecha
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('delivery-date');
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            dateInput.min = today.toISOString().split('T')[0];
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+            
+            // Inicializar resumen del pedido
+            updateOrderSummary();
+        });
+
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de entrada para elementos
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.product-card, .step, .sale-point');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate-fade-in');
+                }
+            });
+        }
+
+        // Ejecutar animación al cargar y al hacer scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Agregar estilos para animación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
